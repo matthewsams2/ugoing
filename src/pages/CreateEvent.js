@@ -2,13 +2,14 @@ import React from "react";
 import '../styles/App.css';
 import { useHistory } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function CreateEvent() {
 
   const history = useHistory();
 
   function handleClick() {
-    history.push("/PreviewEvent");
+    history.push("/PublishedEvent");
   }
 
   return (
@@ -103,6 +104,7 @@ function CreateEvent() {
         <p class="eventAlmostDone_text default_text_style">You're almost done!</p>
         
       </body>
+      <Footer />
     </div>
   );
 }

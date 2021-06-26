@@ -1,0 +1,39 @@
+.footer {
+    border: 1px solid #D5D5D5;
+    overflow: hidden;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}
+
+.footer a {
+  color: black;
+  text-align: center;
+  padding: 35px;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.footer > div {
+    float: left;
+    width: 33.33%;
+}
+
+.footer_left {
+    text-align: left;
+}
+
+.footer_middle {
+    text-align: center;
+}
+
+.footer_right {
+    text-align: right;
+}
+
+

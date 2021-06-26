@@ -39,7 +39,7 @@
 */
 
 .default_text_style {
-  font-family: SF Pro Text;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: -0.28px;
 }
 

@@ -1,6 +1,6 @@
 .header {
     overflow: hidden;
-    padding: 8px 25px;
+    padding: 8px 35px;
 }
 
 .header a {
@@ -15,9 +15,6 @@
 }
 
 
-.text_buttons{
-    vertical-align: middle;
-}
 
 .logo {
     float: left;

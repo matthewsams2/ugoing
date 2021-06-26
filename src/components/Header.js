@@ -5,11 +5,11 @@ import logo from "../assets/UGoing_Logo.png";
 function Header() {
     return (
         <div className="header">
-        <img src={logo} alt="UGoing" class="logo"></img>
-        <div class="header-right">
-            <a href=""><b><u>Sign Up</u></b></a>
+            <img src={logo} alt="UGoing" class="logo"></img>
+            <div class="header-right">
+                <a href=""><b><u>Sign Up</u></b></a>
+            </div>
         </div>
-    </div>
     )
 }
 

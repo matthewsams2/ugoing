@@ -1,0 +1,113 @@
+.main-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+    
+}
+
+.publishedEventName_text {
+    margin-right: auto;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.publishedEventDescription_textarea {
+    height: 136px;
+    resize: none;
+  
+    background: #F3F3F3;
+    border-radius: 8px;
+    border: 0px;
+
+    margin-top: 18px;
+}
+
+.publishedEventDescription_textarea textarea:focus{
+    outline: none;
+}
+
+.shareEvent_toggle {
+    margin-top: 37px;
+    align-items: center;
+}
+
+.shareEvent_text {
+    margin-right: auto;
+    font-size: 24px;
+    line-height: 29px;
+    width: 250px;
+    text-align: left;
+}
+
+.create_account_button {
+  
+    width: 252px;
+    height: 47px;
+
+    margin-top: 61px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: #67CE67;
+    border-radius: 8px;
+    border: 8px;
+    border-color: #67CE67;
+
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    vertical-align: middle;
+
+    color: #FFFFFF;
+
+    float: left;
+}
+
+.create_account_button:hover {
+    background: #59b359;
+}
+
+.create_account_button_text {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.create_newEvent_button {
+  
+    width: 252px;
+    height: 47px;
+
+    margin-top: 26px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: #67CE67;
+    border-radius: 8px;
+    border: 8px;
+    border-color: #67CE67;
+
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    vertical-align: middle;
+
+    color: #FFFFFF;
+
+    float: left;
+}
+
+.create_newEvent_button:hover {
+    background: #59b359;
+}
