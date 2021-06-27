@@ -17,6 +17,8 @@
   font-size: 15px;
   line-height: 25px;
   border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .footer > div {

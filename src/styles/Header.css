@@ -1,6 +1,7 @@
 .header {
     overflow: hidden;
     padding: 8px 35px;
+    border: 1px solid #D5D5D5;
 }
 
 .header a {

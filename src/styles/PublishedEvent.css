@@ -3,10 +3,10 @@
     justify-content: center;
     flex-direction: column;
 
-    margin-top: 35px;
+    margin-top: 20px;
     margin-left: 35px;
     margin-right: 35px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     
 }
 
@@ -16,98 +16,129 @@
     line-height: 29px;
 }
 
-.publishedEventDescription_textarea {
-    height: 136px;
-    resize: none;
+
+
+
+.blue_button {
   
-    background: #F3F3F3;
-    border-radius: 8px;
-    border: 0px;
-
-    margin-top: 18px;
-}
-
-.publishedEventDescription_textarea textarea:focus{
-    outline: none;
-}
-
-.shareEvent_toggle {
-    margin-top: 37px;
-    align-items: center;
-}
-
-.shareEvent_text {
-    margin-right: auto;
-    font-size: 24px;
-    line-height: 29px;
-    width: 250px;
-    text-align: left;
-}
-
-.create_account_button {
-  
-    width: 252px;
+    width: 254px;
     height: 47px;
 
-    margin-top: 61px;
     margin-left: auto;
     margin-right: auto;
 
-    background: #67CE67;
+    background: #2C69F6;
     border-radius: 8px;
     border: 8px;
-    border-color: #67CE67;
+    border-color: #2C69F6;
 
 
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 15px;
+    line-height: 17.9px;
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
 
     color: #FFFFFF;
 
     float: left;
 }
 
-.create_account_button:hover {
-    background: #59b359;
+.blue_button:hover {
+    background: #0840c4;
+}
+
+.createAccount_button {
+    margin-top: 40px;
+    
 }
 
 .create_account_button_text {
-    margin-top: 9px;
+    margin: 20px 0px;
     font-size: 12px;
     line-height: 14px;
 }
 
-.create_newEvent_button {
+.eventHeader_box {
+    align-items: center;
+}
+
+.eventHeader_box a {
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.outlined_box h2 {
+    text-align: left;
+    margin: 0 0;
+}
+
+.outlined_box p {
+    margin-top: 14px;
+    text-align: left;
+    line-height: 18px;
+}
+
+.outlined_box_columns {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 20px;
+    padding-right: 0px;
+
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+
+
+
+.bottom_text {
+    margin-top: 18px;
+}
+
+.shareEvent_box {
+    display: grid;
+    grid-template-columns: 30px 253px 30px;
+    grid-template-rows: auto;
   
-    width: 252px;
-    height: 47px;
-
-    margin-top: 26px;
-    margin-left: auto;
-    margin-right: auto;
-
-    background: #67CE67;
-    border-radius: 8px;
-    border: 8px;
-    border-color: #67CE67;
-
-
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 29px;
+    justify-items: center;
+    align-items: center;
     text-align: center;
-    vertical-align: middle;
 
-    color: #FFFFFF;
-
-    float: left;
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 18px;
+    height: 28px;
 }
 
-.create_newEvent_button:hover {
-    background: #59b359;
+.copyLink_Button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0px 24px;
+    height: 39px;
+    cursor: pointer;
+
+    font-size: 15px;
+    color: #2C69F6;
+
+    border-left: 1px solid#D5D5D5;
 }
+
+.copyLink_Text {
+    font-size: 15px;
+    align-items: center;
+}
+
+.shareLink_box {
+    margin-top: 20px;
+    align-items: center;
+}
+
