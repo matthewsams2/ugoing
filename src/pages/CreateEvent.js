@@ -25,7 +25,6 @@ function CreateEvent() {
                 <h1 class="eventBasics_text default_text_style default_header_text">The Basics ✏️</h1>
                 <a href="" class="default_text_style"><u>edit</u></a>
               </div>
-              
               <div class="outlined_box">
                 <h2 class="default_text_style default_header_text">Gradutation Party</h2>
                 <h3 class="defautl_text_style default_header_text eventDescription_subHeader">Event Description</h3>
@@ -65,54 +64,30 @@ function CreateEvent() {
                 <p class="default_text_style eventLocation_subText">There’s guest parking in Lot B!</p>
               </div>
             </div>
-            <h6 class="eventOrganizerContactInfo_text default_text_style default_header_text">Organizer Contact Info</h6>
-            <div class="toggle_container eventOrganizerContactInfo_toggle">
-              <div>
-                <p class="eventOrganizerContactInfo_toggle_text default_text_style"><i>Do you want to add a phone number for attendees to contact?</i></p>
+            <div>
+              <div class="eventHeader_box toggle_container">
+                <h6 class="eventTime_text default_text_style default_header_text">Organizer Contact Info 📞</h6>
+                <a href="" class="default_text_style"><u>edit</u></a>
               </div>
-              <div>
-                <label class="rounded_switch">
-                  <input type="checkbox"></input>
-                  <span class="slider round"></span>
-                </label>
-              </div>
-            </div>
-            <input class="eventOrganizerContactInfo_phone_input input_padding input_size default_text_style" type="text" id="eventOrganizer_phone" name="eventOrganizer_phone" maxlength="15" placeholder="+1 650 963 6030"></input>
-            <p class="eventOrganizerContactInfo_name_text default_text_style "><i>Who's phone number is this?</i></p>
-            <input class="eventOrganizerContactInfo_name_input input_padding input_size default_text_style" type="text" id="eventOrganizer_name" name="eventOrganizer_name" maxlength="30" placeholder="Kenta"></input>
-            <h6 class="eventPassword_text default_text_style default_header_text">Password</h6>
-            <div class="toggle_container eventPassword_toggle">
-              <div>
-                <p class="eventPassword_toggle_text default_text_style"><i>Add a password to your event.</i></p>
-                <p class="eventPassword_toggle_text_2 default_text_style"><i>People with the link will not be able view event details without a password</i></p>
-              </div>
-              <div>
-                <label class="rounded_switch">
-                  <input type="checkbox"></input>
-                  <span class="slider round"></span>
-                </label>
+              <div class="outlined_box">
+                <div class="eventTime_box toggle_container">
+                  <text class="default_text_style"><b>Phone</b></text>
+                  <text class="default_text_style"><u>650-123-4567</u></text>
+                </div>
+                <div class="eventTime_box toggle_container">
+                  <text class="default_text_style"><b>Person</b></text>
+                  <text class="default_text_style">Peter Parker</text>
+                </div>
               </div>
             </div>
-            <p class="eventPassword_password_text default_text_style "><i>enter your password</i></p>
-            <input class="eventPassword_password_input input_padding input_size default_text_style" type="password" id="eventPassword_password" name="eventPassword_password" maxlength="30" placeholder="•••••••••"></input>
-            <p class="eventPassword_confirm_text default_text_style "><i>re-enter your password</i></p>
-            <input class="eventPassword_confirm_input input_padding input_size default_text_style" type="password" id="eventPassword_confirm" name="eventPassword_confirm" maxlength="30" placeholder="••••••••••"></input>
-            <h6 class="eventRSVP_text default_text_style default_header_text">RSVP</h6>
-            <div class="toggle_container eventRSVP_toggle">
-              <div>
-                <p class="eventRSVP_toggle_text default_text_style"><i>Do you want attendants to be able to RSVP to your event?</i></p>
-                <p class="eventRSVP_toggle_text_2 default_text_style"><i>Attendants with the link will be able to put their name down to and others will be able to see who has RSVP’d<br></br>*you will need to create an account in order to allow for RSVP’s</i></p>
-              </div>
-              <div>
-                <label class="rounded_switch">
-                  <input type="checkbox"></input>
-                  <span class="slider round"></span>
-                </label>
+            <div>
+              <div class="eventPublish_box">
+                <a href="" class="default_text_style"><u>edit</u></a>
+                <button class="blue_button default_text_style eventPreview_button" onClick={handleClick}>Preview</button>
               </div>
             </div>
-            <input class ="preview_button default_text_style" type="submit" value="Preview" onClick={handleClick}></input>
+            <p class="eventAlmostDone_text default_text_style">You're almost done!</p>
           </form>
-          <p class="eventAlmostDone_text default_text_style">You're almost done!</p>
         </div>
       </body>
       <Footer />

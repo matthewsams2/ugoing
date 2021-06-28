@@ -716,19 +716,7 @@ input:checked + .slider:before {
   background: #59b359;
 }
 
-.eventAlmostDone_text {
-  position: absolute;
-  width: 150px;
-  height: 46px;
-  left: 107px;
-  top: 2938px;
 
-  font-size: 24px;
-  line-height: 29px;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 100px;
-}
 
 .outlined_box {
   display: flex;
@@ -744,3 +732,35 @@ input:checked + .slider:before {
 
 
 
+
+.blue_button {
+  
+  width: 254px;
+  height: 47px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #2C69F6;
+  border-radius: 8px;
+  border: 8px;
+  border-color: #2C69F6;
+
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 17.9px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  color: #FFFFFF;
+
+  float: left;
+  user-select: none;
+}
+
+.blue_button:hover {
+  background: #0840c4;
+}

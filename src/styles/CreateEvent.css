@@ -23,7 +23,6 @@
     margin-top: 18px;
 }
 
-
 .eventTime_text {
     /* Time */
     align-items: left;
@@ -32,4 +31,24 @@
 
 .eventTime_box {
     margin: 10px 0px;
+}
+
+.eventPublish_box {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.eventAlmostDone_text {
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+.eventPreview_button {
+    width: 132px;
 }
