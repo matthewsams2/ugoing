@@ -9,7 +9,9 @@ function App() {
         Limelight: require("./assets/fonts/Limelight-Regular.ttf"),
         Gilroy: require("./assets/fonts/Gilroy-Regular.ttf"),
         GilroyBold: require("./assets/fonts/Gilroy-Bold.ttf"),
-        GilroyExtraBold: require("./assets/fonts/Gilroy-ExtraBold.ttf")
+        GilroyExtraBold: require("./assets/fonts/Gilroy-ExtraBold.ttf"),
+        GilroySemiBold: require("./assets/fonts/Gilroy-SemiBold.ttf"),
+        GilroyMedium: require("./assets/fonts/Gilroy-Medium.ttf")
     });
     if (!loaded) {
         return null;

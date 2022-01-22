@@ -116,74 +116,97 @@ export const HomeScreen = ({ navigation }) => {
                             One link to rule{"\n"}them all
                         </Text>
 
-                        <Text style={[GlobalStyles.bodyText, {marginBottom: "0.9375rem", marginBottom: "4.75rem", color: "white", marginHorizontal: "2.906rem"}]}>
+                        <Text style={[GlobalStyles.bodyText, {marginBottom: "1.875rem", color: "white", marginHorizontal: "2.906rem"}]}>
                         Details get burried easily in the group chat. Instead of re-typing your event details each time, send a link
                         </Text>
                       
-                         <View style={[GlobalStyles.columnContainer]}>
-                             
-                            <View style={[GlobalStyles.imageContainer]}>
-                                <Image
-                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                        <View style={[GlobalStyles.columnContainer, {marginBottom: "2.25rem"}]}>
+                            
+                            <View style={[GlobalStyles.imageContainer, styles.iconSpacing]}>
+                                {/*Calendar icon*/}
+                                <Image  
+                                    style={[styles.iconFormatting, { width: "1.75rem", height: "1.75rem", }]}
                                     source={require("../assets/Calendar-small.svg")}
                                 />
                             </View>
-                            <View style={[GlobalStyles.imageContainer]}>
-                                <Image
-                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                            <View style={[GlobalStyles.imageContainer, styles.iconSpacing]}>
+                                {/*Mail icon*/}
+                                <Image 
+                                    style={[styles.iconFormatting, { width: "1.89rem", height: "1.5131rem", }]}
                                     source={require("../assets/Mail-small.svg")}
                                 />
                             </View>
-                            <View style={[GlobalStyles.imageContainer]}>
+                            <View style={[GlobalStyles.imageContainer, styles.iconSpacing]}>
+                                {/*SMS icon*/}
                                 <Image
-                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    style={[styles.iconFormatting, { width: "1.875rem", height: "1.75rem", }]}
                                     source={require("../assets/SMS-small.svg")}
                                 />
                             </View>
-                            <View style={[GlobalStyles.imageContainer]}>
+                            <View style={[GlobalStyles.imageContainer, styles.iconSpacing]}>
+                                {/*Facebook icon*/}
                                 <Image
-                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    style={[styles.iconFormatting, { width: "1.703rem", height: "1.703rem", }]}
                                     source={require("../assets/Facebook-small.svg")}
                                 />
                             </View>
+                        </View>
 
-                         </View>
+                        {/*  Adding text convo image*/}
+                        <Image
+                            style={{width:"20.3125rem", height:"25.0625rem", margin: "0 auto 0 auto"}}
+                            source={require("../assets/text-convo.png")}
+                        >
+                            
+                        </Image>
                     </View>
-
-                    
-
-
                 </View>
 
-                {/*<View style={[GlobalStyles.cardSection, {backgroundColor: "#F7F7F7", zIndex: 1}]}>
-                    <View style={styles.titleSection}>
-                        <Text
-                            style={[
-                                GlobalStyles.headerText,
-                                {
-                                    paddingTop: 115,
-                                    paddingBottom: 186,
-                                    paddingHorizontal: 35,
-                                    color: "#292929",
-                                    fontWeight: "normal",
-                                    letterSpacing: 1,
-                                },
-                            ]}
-                        >
-                            The 🌎’s Fastest {"\n"}
-                            <Text
-                                style={{ textDecorationLine: "underline" }}
-                                onPress={() => navigation.navigate("Create")}
-                            >
-                                Event
-                            </Text>{" "}
-                            Organizer
-                        </Text>
-                        <TouchableOpacity
-                            style={[
-                                GlobalStyles.submitButton,
-                                { marginBottom: 192},
-                            ]}
+
+    {/*Fifth Card/Section: "Right into their calendar" */}
+    <View style={[GlobalStyles.cardSection, {backgroundColor: GlobalColors.white}]}>
+        <View style={[styles.titleSection]}>
+            {/*Header*/}
+            <Text style={[GlobalStyles.headerText, {marginBottom: "1.875rem"}]}>
+                    Right into their Calendar
+            </Text>
+                       
+            {/*  Adding multiple calendar image*/}
+            <Image
+                style={{width:"9.1875rem", height:"6.6875rem", margin: "0 auto 0 auto", marginBottom: "1.875rem"}}
+                source={require("../assets/calendar-multiple.png")}
+            >  
+            </Image>
+
+
+            {/*Body text*/}
+            <Text style={[GlobalStyles.bodyText, {marginBottom: "4.75rem", color: "#6F7480", marginHorizontal: "2.906rem"}]}>
+            UGoing lets you add events directly into your preferred calendar.
+            {'\n'}
+            {'\n'}
+            No more digging through messages or forgotten reminders - Everything you need to know front and center where you expect it
+            </Text>
+        </View>
+        </View>
+
+
+  {/*sixth: Tile Section */}
+
+  <View style={[GlobalStyles.tileSection, styles.titleSection, {backgroundColor: GlobalColors.white}]}>
+            <Text style={[GlobalStyles.headerText, {marginBottom: "3rem"}]}>
+            And it’s all free!
+            </Text>
+
+            <Text style={[GlobalStyles.bodyText, {marginBottom: "4.75rem", color: GlobalColors.lightBlack, marginHorizontal: "2.906rem", textAlign: "center", marginBottom: "4.5625rem"}]}>
+            Create as many events as you want
+            {'\n'}
+            Free to create events
+            {'\n'}
+            Free for your guests
+            </Text>
+
+            {/*Create Event Button*/}
+            <TouchableOpacity style={[GlobalStyles.submitButton, {marginBottom: "3.125rem"}]}
                             onPress={() => {
                                 navigation.navigate("Create");
                             }}
@@ -192,220 +215,10 @@ export const HomeScreen = ({ navigation }) => {
                                 Create Event
                             </Text>
                         </TouchableOpacity>
-                    </View>
-                </View>
-                <View style={[GlobalStyles.cardSection, {backgroundColor: "#7B7B7B", zIndex: 2, marginTop: -60}]}>
-                    <View
-                        style={{
-                            flexDirection: "column",
-                            paddingHorizontal: 30,
-                            paddingBottom: 23,
-                        }}
-                    >
-                            <Text
-                                style={[
-                                    GlobalStyles.headerText,
-                                    {
-                                        fontSize: 24,
-                                        marginTop: 50,
-                                        textAlign: 'left',
-                                        paddingHorizontal: 0,
-                                        fontWeight: 700,
-                                        letterSpacing: 1,
-                                        color: '#FFFFFF'
-                                    },
-                                ]}
-                            >
-                                Let’s throw a party! 🎉{" "}
-                            </Text>
-                            <Text
-                                style={[
-                                    GlobalStyles.bodyText,
-                                    { textAlign: "center", fontSize: 18, lineHeight: 36, color: '#FFFFFF', marginTop: 28, marginBottom: 100, paddingLeft: 0},
-                                ]}
-                            >
-                                UGoing creates a{" "}
-                                <Text
-                                    style={{ textDecorationLine: "underline" }}
-                                    onPress={() => navigation.navigate("Create")}
-                                >
-                                    unique link
-                                </Text>{" "}
-                                to your next event that friends can add directly to
-                                their calendars
-                            </Text>
-                            <View style={{justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', marginBottom: 179}}>
-                                <Image
-                                    style={{ height: 172, width: 172, margin: '0 auto 0 auto'}}
-                                    source={require("../assets/Hands_Party.png")}
-                                />
+    </View>
 
-                            </View>
-                            
-                            
-                    </View>
-                </View>
-                <View style={[GlobalStyles.cardSection, {backgroundColor: "#F7F7F7", zIndex: 3, marginTop: -60}]}>
-                    <Text
-                        style={[
-                            GlobalStyles.headerText,
-                            {
-                                fontSize: 24,
-                                marginTop: 50,
-                                textAlign: 'left',
-                                paddingHorizontal: 30,
-                                fontWeight: 700,
-                                letterSpacing: 1,
-                            },
-                        ]}
-                    >
-                        It's as easy as...
-                    </Text>
-                    <View
-                        style={[
-                            GlobalStyles.bodyText,
-                            { fontSize: 18, lineHeight: 36, marginTop: 32, marginBottom: 40, paddingHorizontal: 30},
-                        ]}
-                    >
-                        <ol>
-                            <li>Create Your Event</li>
-                            <li>Send the link to your friends</li>
-                            <li>View the details online or add them to your calendar with a single tap</li>
-                        </ol>
-                        
-                    </View>
-                    <Image
-                        style={{ height: 316, width: 283, marginBottom: 47, marginLeft: 'auto', marginRight: 'auto'}}
-                        source={require("../assets/Google_Calendar_Event.png")}>
-                    </Image>
-                </View>
-
-                <View >
-                        <Text
-                            style={[
-                                GlobalStyles.headerText,
-                                {
-                                    fontSize: 24,
-                                    marginTop: 38,
-                                    textAlign: "center",
-                                    fontWeight: 700,
-                                    letterSpacing: 1,
-                                },
-                            ]}
-                        >
-                            1 Link to Rule Them All 🔗
-                        </Text>
-                        <Text
-                            style={[
-                                GlobalStyles.bodyText,
-                                { textAlign: "center", fontSize: 18, lineHeight: 36, marginTop: 32, marginBottom: 23, paddingLeft: 30, paddingRight: 30},
-                            ]}
-                        >
-                            Details get burried often in the group chat.
-                            Instead of re-typing each time, send a{" "}
-                            <Text
-                                style={{ textDecorationLine: "underline" }}
-                                onPress={() =>
-                                    navigation.navigate("Create")
-                                }
-                            >
-                                link
-                            </Text>
-                        </Text>
-                    <Image
-                        style={{ height: 441, width: 315, marginLeft: 'auto', marginRight: 'auto', marginBottom: 69}}
-                        source={require("../assets/Messenger_Chat.png")}
-                    />
-                </View>
-
-                <View style={[GlobalStyles.cardSection, {backgroundColor: "#FAFDF2", zIndex: 1, marginTop: -60}]}>
-                    <Text
-                        style={[
-                            GlobalStyles.headerText,
-                            {
-                                fontSize: 24,
-                                marginTop: 38,
-                                marginBottom: 74,
-                                textAlign: "center",
-                                fontStyle: "normal",
-                                fontWeight: 700,
-                                letterSpacing: 1,
-                            },
-                        ]}
-                    >
-                        Right into their Calendar 📅
-                    </Text>
-                    <View style={[styles.columnContainer, {marginBottom: 188, paddingRight: 30}]}>
-                        <Image
-                            style={{ height: 96, width: 96, marginLeft: 30, marginTop: 'auto', marginBottom: 'auto' }}
-                            source={require("../assets/Icon_Calendar.png")}
-                        />
-                        <Text
-                            style={[
-                                GlobalStyles.bodyText,
-                                { textAlign: "right", fontSize: 18, lineHeight: 36, paddingLeft: 10},
-                            ]}
-                        >
-                            UGoing lets friends add your event directly into
-                            their preferred calendar{"\n"}
-                            {"\n"}
-                            No more digging through messages or forgotten reminders - Everything you need to know front and center where you expect it
-                        </Text>
-                    </View>
-                </View>
-
-                <View style={[GlobalStyles.cardSection, {backgroundColor: "#7B7B7B", zIndex: 2, marginTop: -60}]}>
-                    <Text
-                        style={[
-                            GlobalStyles.headerText,
-                            {
-                                fontSize: 24,
-                                marginTop: 38,
-                                marginBottom: 74,
-                                marginLeft: 30,
-                                textAlign: "center",
-                                fontStyle: "normal",
-                                fontWeight: 700,
-                                letterSpacing: 1,
-                                color: '#FFFFFF'
-                            },
-                        ]}
-                    >
-                        And it’s all Free!  👏
-                    </Text>
-                    <Text
-                        style={[
-                            GlobalStyles.bodyText,
-                            { textAlign: "center", color: '#FFFFFF', fontSize: 18, lineHeight: 36, paddingLeft: 0, marginHorizontal: 80},
-                        ]}
-                    >
-                        Create as many events as you want{"\n"}
-                        {"\n"}
-                        Free to create events{"\n"}
-                        {"\n"}
-                        Free for your guests{"\n"}
-                        {"\n"}
-                    </Text>
-                    <Image
-                        style={{ height: 64, width: 64, marginLeft: 'auto', marginRight: 'auto', marginBottom: 101}}
-                        source={require("../assets/Icon_FreeEvent.png")}
-                    />
-                </View>
-
-                    <TouchableOpacity
-                        style={[
-                            GlobalStyles.submitButton,
-                            { marginTop: 54, marginBottom: 64, marginLeft: 'auto', marginRight: 'auto' },
-                        ]}
-                        onPress={() => {
-                            navigation.navigate("Create");
-                        }}
-                    >
-                        <Text style={GlobalStyles.buttonText}>
-                            Create Event
-                        </Text>
-                    </TouchableOpacity>
-                    */}</View>
+            
+</View>
             
             <Footer ></Footer>
         </View>
@@ -454,5 +267,12 @@ const styles = StyleSheet.create({
     },
     rowContainer: {
         justifyContent: "space-evenly",
+    },
+    iconFormatting: {   
+        margin: '0 auto 0 auto',        
+        opacity: 0.5,
+    },
+    iconSpacing: {
+        marginHorizontal: "0.625rem",      
     },
 });

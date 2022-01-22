@@ -76,8 +76,8 @@ export const GlobalStyles = StyleSheet.create({
         lineHeight: "2.0625rem",
         letterSpacing: "0.04em",
         color: "#292C35",
-        fontWeight: "500",
-        fontFamily: "Gilroy",
+        fontWeight: 500,
+        fontFamily: "GilroySemiBold",
         textAlign: "center",
         letterSpacing: 1,
         marginHorizontal: "2.906rem",
@@ -85,8 +85,16 @@ export const GlobalStyles = StyleSheet.create({
     },
     //bolden text
     extraBold: {
-        fontFamily: "GilroyExtraBold"
+        fontFamily: "GilroyExtraBold",
+        fontWeight: 500,
     },
+    //for tiles
+    tileSection: {
+       borderRadius: 15,
+       boxShadow: "0px -6px 50px #ABBAC2",
+       marginHorizontal: "1.5625rem",
+    },
+
     descriptionText: {
         fontFamily: "SFPro",
         fontWeight: "bold",
@@ -109,7 +117,7 @@ export const GlobalStyles = StyleSheet.create({
         paddingVertical: 10,
     },
     bodyText: {
-        fontFamily: "Gilroy",
+        fontFamily: "GilroyMedium",
         fontSize: "0.9375rem",
         fontWeight: "500",
         letterSpacing: "0.04rem",
