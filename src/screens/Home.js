@@ -21,14 +21,18 @@ export const HomeScreen = ({ navigation }) => {
                 {/*First Card/Section */}
                 <View style={[GlobalStyles.cardSection]}>
                     <View style={[styles.titleSection]}>
+                        {/*Header*/}
                         <Text style={[GlobalStyles.headerText, {marginTop: "0.04rem", marginBottom: "5.8rem", marginHorizontal: "1.5625rem", fontSize: "2.052rem"}]}>
                             The world’s fastest{"\n"}
-                            <Text style={{fontFamily: "GilroyExtraBold"}}>Event Organizer</Text>
+                            {/*Inline Bold Text*/}
+                            <Text style={GlobalStyles.extraBold}>Event Organizer</Text>
                         </Text>
+                        {/*Icon*/}
                         <Image
                             style={{ width: "17.625rem", height: "10.574rem", margin: '0 auto 0 auto'}}
-                            source={require("../assets/Group-1.png")}
+                            source={require("../assets/HomeIcon-1.png")}
                         />
+                        {/*Create Event Button*/}
                         <TouchableOpacity style={[GlobalStyles.submitButton, {marginTop: "5.776rem", marginBottom: "4.6875rem"}]}
                             onPress={() => {
                                 navigation.navigate("Create");
@@ -40,49 +44,61 @@ export const HomeScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
+                {/*Second Card/Section */}
                 <View style={[GlobalStyles.cardSection, {backgroundColor: GlobalColors.lightRed}]}>
                     <View style={[styles.titleSection]}>
+                        {/*Header*/}
                         <Text style={[GlobalStyles.headerText, {marginBottom: "0.9375rem"}]}>
                             Let's throw a party!
                         </Text>
+                        {/*Body text*/}
                         <Text style={[GlobalStyles.bodyText, {marginBottom: "0.9375rem", marginBottom: "4.75rem", color: "#6F7480", marginHorizontal: "2.906rem"}]}>
                             UGoing creates a free shareable link to your next event that friends can add directly to their calendars
                         </Text>
+                        {/*Icon*/}
                         <Image
                             style={{ width: "12.0625rem", height: "12.0625rem", margin: '0 auto 0 auto', marginBottom: "4.6875rem"}}
                             source={require("../assets/Schedule-1.png")}
                         />
                     </View>
                 </View>
+                {/*Third Card/Section */}
                 <View style={[GlobalStyles.cardSection]}>
                     <View style={[styles.titleSection]}>
+                        {/*Header*/}
                         <Text style={[GlobalStyles.headerText, {marginBottom: "3.4375rem"}]}>
                             It's as easy as...
                         </Text>
+                        {/*Icon + pink box. Box styling and dimensions set in iconBox*/}
                         <View style={[GlobalStyles.iconBox]}>
                             <Image
                                 style={{ width: "1.96rem", height: "1.96rem", margin: '0 auto 0 auto'}}
                                 source={require("../assets/Plus-Icon.svg")}
                             />
                         </View>
+                        {/*Body text is slightly larger. Has identical spacing and color set in bigBodyText*/}
                         <Text style={[GlobalStyles.bodyText, styles.bigBodyText]}>
                             1. Create your event
                         </Text>
+                        {/*Icon + pink box. Box styling and dimensions set in iconBox*/}
                         <View style={[GlobalStyles.iconBox]}>
                             <Image
                                 style={{ width: "1.96rem", height: "1.96rem", margin: '0 auto 0 auto'}}
                                 source={require("../assets/Link-Icon.svg")}
                             />
                         </View>
+                        {/*Body text is slightly larger. Has identical spacing and color set in bigBodyText*/}
                         <Text style={[GlobalStyles.bodyText, styles.bigBodyText]}>
                             2. Send the link to your friends
                         </Text>
+                        {/*Icon + pink box. Box styling and dimensions set in iconBox*/}
                         <View style={[GlobalStyles.iconBox]}>
                             <Image
                                 style={{ width: "1.96rem", height: "1.96rem", margin: '0 auto 0 auto'}}
                                 source={require("../assets/Calendar-Icon.svg")}
                             />
                         </View>
+                        {/*Body text is slightly larger. Has identical spacing and color set in bigBodyText*/}
                         <Text style={[GlobalStyles.bodyText, styles.bigBodyText, {marginHorizontal: "1.3rem", marginBottom: "5.478rem"}]}>
                             3. View the details online or add them{"\n"}to your calendar with a single tap
                         </Text>

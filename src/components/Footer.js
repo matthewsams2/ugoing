@@ -10,18 +10,22 @@ import { GlobalStyles, GlobalColors } from "../styles/GlobalStyles";
 class Footer extends React.Component {
     render() {
         return (
-            <View style={[GlobalStyles.columnContainer, {justifyContent: 'center', backgroundColor: '#FFFFFF', borderTopWidth: 1, borderColor: '#D5D5D5'}]}>
-                    <TouchableOpacity onPress = {() => navigation.navigate("About")} style={{width: '35%', paddingTop: 30, paddingBottom: 40 }}>
+            /*Footer Container*/
+            <View style={[GlobalStyles.columnContainer, styles.footerContainer]}>
+                    {/*About Button*/}
+                    <TouchableOpacity onPress = {() => navigation.navigate("About")} style={styles.buttonLayout}>
                         <Text style={[ {textAlign: "center"}]}>
                             About
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress = {() => navigation.navigate("TOS")} style={{width: '30%', paddingTop: 30, paddingBottom: 40 }}>
+                    {/*TOS Button*/}
+                    <TouchableOpacity onPress = {() => navigation.navigate("TOS")} style={styles.buttonLayout}>
                         <Text style={[ {textAlign: "center"}]}>
                             Terms Of Use
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress = {() => navigation.navigate("PrivacyPolicy")} style={{width: '35%', paddingTop: 30, paddingBottom: 40 }}>
+                    {/*Privacy Policy Button*/}
+                    <TouchableOpacity onPress = {() => navigation.navigate("PrivacyPolicy")} style={styles.buttonLayout}>
                         <Text style={[ {textAlign: "center"}]}>
                             Privacy Policy
                         </Text>
@@ -35,4 +39,15 @@ class Footer extends React.Component {
 export default Footer;
 
 const styles = StyleSheet.create({
+    footerContainer: {
+        justifyContent: "center", 
+        backgroundColor: "#FFF", 
+        borderTopWidth: 1, 
+        borderColor: "#D5D5D5"
+    },
+    buttonLayout: {
+        width: "35%",
+        paddingTop: "1.875rem",
+        paddingBottom: "2.5rem" 
+    }
 });

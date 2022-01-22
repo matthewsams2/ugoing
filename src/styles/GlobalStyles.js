@@ -77,6 +77,7 @@ export const GlobalStyles = StyleSheet.create({
         marginHorizontal: "2.906rem",
         marginTop: "4.375rem",
     },
+    //bolden text
     extraBold: {
         fontFamily: "GilroyExtraBold"
     },
