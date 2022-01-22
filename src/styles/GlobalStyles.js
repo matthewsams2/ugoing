@@ -29,7 +29,7 @@ export const GlobalColors = {
     lightest: "#F6CECE",
 
     // Button color
-    lightBlack: "#292929",
+    lightBlack: "#292C35",
     veryLightGrey: "#F4F4F4",
     lightestGrey: "#D5D5D5",
     blueOutline: "#2C69F6",
@@ -58,6 +58,12 @@ export const GlobalStyles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
     },
+    imageContainer: {
+        height: "2.25rem",
+        width: "2.25rem",
+        alignItems: "center",
+        justifyContent: "center",
+    },
     bottomSection: {
         flex: 1,
         alignItems: "center",
@@ -67,7 +73,7 @@ export const GlobalStyles = StyleSheet.create({
     },
     headerText: {
         fontSize: "1.75rem",
-        lineHeight: "3.125rem",
+        lineHeight: "2.0625rem",
         letterSpacing: "0.04em",
         color: "#292C35",
         fontWeight: "500",

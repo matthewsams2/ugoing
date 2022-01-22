@@ -18,11 +18,12 @@ export const HomeScreen = ({ navigation }) => {
         <View style={styles.mainContainer}>
             {/*Top Section */}
             <View style={[GlobalStyles.topSection, {backgroundColor: '#FFF'}]}>
-                {/*First Card/Section */}
+    
+    {/*First Card/Section */}
                 <View style={[GlobalStyles.cardSection]}>
                     <View style={[styles.titleSection]}>
                         {/*Header*/}
-                        <Text style={[GlobalStyles.headerText, {marginTop: "0.04rem", marginBottom: "5.8rem", marginHorizontal: "1.5625rem", fontSize: "2.052rem"}]}>
+                        <Text style={[GlobalStyles.headerText, {marginTop: "0.04rem", marginBottom: "5.8rem", marginHorizontal: "1.5625rem", fontSize: "2.052rem", lineHeight: "3.125rem"}]}>
                             The world’s fastest{"\n"}
                             {/*Inline Bold Text*/}
                             <Text style={GlobalStyles.extraBold}>Event Organizer</Text>
@@ -44,7 +45,7 @@ export const HomeScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                {/*Second Card/Section */}
+    {/*Second Card/Section: "Let's throw a party!" */}
                 <View style={[GlobalStyles.cardSection, {backgroundColor: GlobalColors.lightRed}]}>
                     <View style={[styles.titleSection]}>
                         {/*Header*/}
@@ -62,7 +63,7 @@ export const HomeScreen = ({ navigation }) => {
                         />
                     </View>
                 </View>
-                {/*Third Card/Section */}
+    {/*Third Card/Section: "It's as easy as..."  */}
                 <View style={[GlobalStyles.cardSection]}>
                     <View style={[styles.titleSection]}>
                         {/*Header*/}
@@ -105,6 +106,55 @@ export const HomeScreen = ({ navigation }) => {
                         
                     </View>
                 </View>
+
+    {/*Fourth Card/Section: "One link to rule them all"  */}
+                <View style={[GlobalStyles.cardSection, {backgroundColor: GlobalColors.lightBlack}]}>
+                   
+                    <View style={[styles.titleSection]}> 
+                        {/*Header*/}
+                        <Text style={[GlobalStyles.headerText, {marginBottom: "0.9375rem", color: "white", lineHeight: "2.0625rem"}]}> {/*  15px bottom /16=.9375 */}
+                            One link to rule{"\n"}them all
+                        </Text>
+
+                        <Text style={[GlobalStyles.bodyText, {marginBottom: "0.9375rem", marginBottom: "4.75rem", color: "white", marginHorizontal: "2.906rem"}]}>
+                        Details get burried easily in the group chat. Instead of re-typing your event details each time, send a link
+                        </Text>
+                      
+                         <View style={[GlobalStyles.columnContainer]}>
+                             
+                            <View style={[GlobalStyles.imageContainer]}>
+                                <Image
+                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    source={require("../assets/Calendar-small.svg")}
+                                />
+                            </View>
+                            <View style={[GlobalStyles.imageContainer]}>
+                                <Image
+                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    source={require("../assets/Mail-small.svg")}
+                                />
+                            </View>
+                            <View style={[GlobalStyles.imageContainer]}>
+                                <Image
+                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    source={require("../assets/SMS-small.svg")}
+                                />
+                            </View>
+                            <View style={[GlobalStyles.imageContainer]}>
+                                <Image
+                                    style={{ width: "1.75rem", height: "1.75rem", margin: '0 auto 0 auto'}}
+                                    source={require("../assets/Facebook-small.svg")}
+                                />
+                            </View>
+
+                         </View>
+                    </View>
+
+                    
+
+
+                </View>
+
                 {/*<View style={[GlobalStyles.cardSection, {backgroundColor: "#F7F7F7", zIndex: 1}]}>
                     <View style={styles.titleSection}>
                         <Text
