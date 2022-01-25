@@ -156,6 +156,7 @@ export const AppNavigator = () => {
                             headerRight: () => {
                                 return loginButton(navigation);
                             },
+                            headerStyle: {borderBottomColor: "white"}
                         })}
                     />
                     <Stack.Screen
@@ -164,9 +165,12 @@ export const AppNavigator = () => {
                         initialParams={{ eventID: "" }}
                         options={({ navigation }) => ({
                             title: "",
-                            headerLeft: () => {
+                            headerTitleAlign: "center",
+                            headerLeft: () => null,
+                            headerTitle: () => {
                                 return headerLogo(navigation);
                             },
+                            headerStyle: {borderBottomColor: "white"}
                         })}
                     />
                     <Stack.Screen
@@ -178,6 +182,7 @@ export const AppNavigator = () => {
                             headerLeft: () => {
                                 return headerLogo(navigation);
                             },
+                            headerStyle: {borderBottomColor: "white"}
                         })}
                     />
                     <Stack.Screen
@@ -188,6 +193,7 @@ export const AppNavigator = () => {
                             headerLeft: () => {
                                 return headerLogo(navigation);
                             },
+                            headerStyle: {borderBottomColor: "white"}
                         })}
                     />
                     <Stack.Screen
@@ -198,6 +204,7 @@ export const AppNavigator = () => {
                             headerLeft: () => {
                                 return headerLogo(navigation);
                             },
+                            headerStyle: {borderBottomColor: "white"}
                         })}
                     />
                     <Stack.Screen
@@ -266,6 +273,9 @@ const styles = StyleSheet.create({
         },
         elevation: 0,
         borderBottomWidth: 0,
+        
+    },
+    bigHeader: {
         height: '7.625rem'
     },
 });
