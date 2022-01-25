@@ -228,7 +228,7 @@ export const HomeScreen = ({ navigation }) => {
             
                 </View>
             
-            <Footer homepage="true"></Footer>
+            <Footer homepage="True" publish = "False"></Footer>
         </View>
     );
 };
@@ -283,4 +283,10 @@ const styles = StyleSheet.create({
     iconSpacing: {
         marginHorizontal: "0.625rem",      
     },
+
+    sticky: {
+        position: "fixed", 
+        top: 0, 
+        width: "100%"
+    }
 });

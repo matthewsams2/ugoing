@@ -36,7 +36,7 @@ export const GlobalColors = {
     lightBlue: "#EFF5FE",
     greenOutline: "#96C746",
     lightGreen: "#FAFDF2",
-    darkGrey: "#7B7B7B",
+    darkGrey: "#3D4149",
     standardRed: "#FF4040",
     lightRed: "rgba(254, 61, 60, 0.07)",
     lightGrey: "#6F7480",

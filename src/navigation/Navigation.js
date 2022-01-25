@@ -38,9 +38,7 @@ function headerLogo(navigation, bigLogo) {
         >
             <Image
                 style={
-                    bigLogo
-                        ? { width: 137, height: 44 }
-                        : { width: 74, height: 24 }
+                    bigLogo ? { width: 137, height: 44 } : { width: 74, height: 24 }
                 }
                 source={require("../assets/UGoing_Logo.png")}
             />
@@ -170,7 +168,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation);
                             },
-                            headerStyle: {borderBottomColor: "white"}
+                            headerStyle: {borderBottomColor: "white",}
                         })}
                     />
                     <Stack.Screen
