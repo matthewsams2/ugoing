@@ -1,5 +1,2 @@
-node_modules
-<<<<<<< HEAD
-.expo
-=======
->>>>>>> b23ea707a40a5a1436269b579fcd71edea1fde6f
+**/node_modules
+**/.expo

@@ -37,14 +37,26 @@ export const GlobalColors = {
     greenOutline: "#96C746",
     lightGreen: "#FAFDF2",
     darkGrey: "#7B7B7B",
-    buttonRed: "#FF4040",
+    standardRed: "#FF4040",
     lightRed: "rgba(254, 61, 60, 0.07)",
+    lightGrey: "#6F7480",
+    standardBlue: "#3F52E4",
 };
 export const GlobalStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
         justifyContent: "center",
+    },
+    commonHorizontalMargin: {
+        marginHorizontal: "1.5625rem",
+    },
+    commonMargin: {
+        marginHorizontal: "1.5625rem",
+        marginVertical: "1.5625rem",
+    },
+    eventTopSpacing: {
+        marginTop: "1.563rem"
     },
     topSection: {
         flex: 1,
@@ -74,12 +86,11 @@ export const GlobalStyles = StyleSheet.create({
     headerText: {
         fontSize: "1.75rem",
         lineHeight: "2.0625rem",
-        letterSpacing: "0.04em",
+        letterSpacing: "0.04rem",
         color: "#292C35",
         fontWeight: 500,
         fontFamily: "GilroySemiBold",
         textAlign: "center",
-        letterSpacing: 1,
         marginHorizontal: "2.906rem",
         marginTop: "4.375rem",
     },
@@ -88,11 +99,37 @@ export const GlobalStyles = StyleSheet.create({
         fontFamily: "GilroyExtraBold",
         fontWeight: 500,
     },
+    semiBold: {
+        fontWeight: 500,
+        fontFamily: "GilroySemiBold",
+    },
     //for tiles
     tileSection: {
        borderRadius: 15,
-       boxShadow: "0px -6px 50px #ABBAC2",
-       marginHorizontal: "1.5625rem",
+       justifyContent: "center",
+       textAlign: "center"
+    },
+    tileShadow: {
+        boxShadow: "0px -6px 50px #ABBAC2",
+    },
+    eventTileShadow: {
+        boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.1)"
+    },
+    eventText: {
+        lineHeight: "1.563rem",
+        letterSpacing: "0.02rem",
+        color: "#292C35",
+        fontWeight: 500,
+        fontFamily: "Gilroy",
+    },
+    eventTextBig: {
+        fontSize: "1.25rem",
+    },
+    eventTextMedium: {
+        fontSize: "0.938rem"
+    },
+    eventTextSmall: {
+        fontSize: "0.813rem"
     },
 
     descriptionText: {
@@ -129,6 +166,12 @@ export const GlobalStyles = StyleSheet.create({
         fontFamily: "GilroyExtraBold",
         letterSpacing: "0.04rem"
     },
+    buttonText2: {
+        color: GlobalColors.standardRed,
+        fontSize: "0.9375rem",
+        fontFamily: "GilroyExtraBold",
+        letterSpacing: "0.04rem",
+    },
     iconBox: {
         height: "3.75rem",
         width: "3.75rem",
@@ -137,13 +180,27 @@ export const GlobalStyles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    //red button with white text
     submitButton: {
         borderRadius: "0.5rem",
         width: "13.5rem",
         height: "3.25rem",
-        backgroundColor: GlobalColors.buttonRed,
+        backgroundColor: GlobalColors.standardRed,
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "row",
+    },
+    //white button with red outlines and text
+    submitButton2: {
+        borderRadius: "0.5rem",
+        width: "13.5rem",
+        height: "3.25rem",
+        backgroundColor: "white",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        borderColor: GlobalColors.standardRed,
+        borderWidth: 1,
     },
     timeButton: {
         width: 150,
@@ -205,4 +262,9 @@ export const GlobalStyles = StyleSheet.create({
         height: 31,
         width: 51
     },
+    greyLine: {
+        borderBottomColor: GlobalColors.lightBlack,
+        borderBottomWidth: 1,
+        opacity: 0.15
+    }
 });

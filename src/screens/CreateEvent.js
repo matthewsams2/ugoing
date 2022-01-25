@@ -24,6 +24,7 @@ import AutocompleteSearch from "../components/AutocompleteSearch";
 
 import  Flatpickr  from "react-flatpickr";
 import {BrowserView, MobileView} from 'react-device-detect';
+import Footer from "../components/Footer"
 
 
 const STATES = {
@@ -472,6 +473,7 @@ export const CreateEvent = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={GlobalStyles.errorText}>{errorStatus}</Text>
             </View>
+            <Footer homepage = "False"></Footer>
         </View>
     );
 };
