@@ -26,6 +26,7 @@ export const PublishPost = ({ route, navigation }) => {
 
     const [toggleAboutText, setToggleAboutText] = useState({});
 
+
     useEffect(() => {
         if (eventID == "") {
             console.log("route params not found");
@@ -53,19 +54,20 @@ export const PublishPost = ({ route, navigation }) => {
             });
     }, [route.params?.eventID]);
 
-    const toggleAboutTextLength = () => {
-        setToggleAboutText(!toggleAboutText)
-    }
-
-
+    //Event Info
     const eventCard = () => {
         return (
+            //Event card layout
             <View style={[GlobalStyles.tileSection, GlobalStyles.eventTileShadow, GlobalStyles.commonHorizontalMargin, {backgroundColor: "white"}]}>
+                {/*Setting Margins*/}
                 <View style={GlobalStyles.commonMargin}>
+                    {/*Event Title + Host Name + Host Phone Number Section*/}
                     <View>
+                        {/*Event Title*/}
                         <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextBig, GlobalStyles.extraBold, {marginBottom: "0.934rem"}]}>
                             {eventDetails.eventName}
                         </Text>
+                        {/* Event Host */}
                         <View style={[styles.eventTextAndIcons, {marginBottom: "0.5rem"}]}>
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
@@ -76,6 +78,7 @@ export const PublishPost = ({ route, navigation }) => {
                                 {' '}{eventDetails.organizerName}
                             </Text>
                         </View>
+                        {/* Event Phone Number */}
                         <View style={[styles.eventTextAndIcons, {marginBottom: "0.5rem"}]}>
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
@@ -87,8 +90,12 @@ export const PublishPost = ({ route, navigation }) => {
                             </Text>
                         </View>
                     </View>
+                    {/*Grey Line*/}
                     <View style={[GlobalStyles.greyLine, styles.lineStyling]}> </View>
+
+                    {/* Date Section */}
                     <View>
+                        {/*Date Title */}
                         <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
@@ -99,6 +106,7 @@ export const PublishPost = ({ route, navigation }) => {
                                 {' '}{'Date'}
                             </Text>
                         </View>
+                        {/*Start and End time*/}
                         <View style={[styles.eventDateText, {marginBottom: "0.75rem"}]}>
                             <View></View>
                             <View style = {GlobalStyles.columnContainer}>
@@ -119,8 +127,13 @@ export const PublishPost = ({ route, navigation }) => {
                             
                         </View>
                     </View>
+
+                    {/*Grey Line*/}
                     <View style={[GlobalStyles.greyLine, styles.lineStyling, ]}> </View>
+
+                    {/*Event Location Section*/}
                     <View>
+                        {/*Event Location Title*/}
                         <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
@@ -131,15 +144,24 @@ export const PublishPost = ({ route, navigation }) => {
                                 {' '}{'Location'}
                             </Text>
                         </View>
+
+                        {/*Event Address */}
                         <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, , {color: GlobalColors.lightBlack, alignItems: "center", marginBottom: "0.625rem", textDecorationLine: 'underline'}]}>
                             {eventDetails.eventLocation == '' ? 'Event Location' : eventDetails.eventLocation}
                         </Text>
+
+                        {/*Arrival Instructions*/}
                         <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, , {color: GlobalColors.standardBlue, alignItems: "center", marginBottom: "0.625rem"}]}>
                             {eventDetails.arrivalInstructions == '' ? 'Arrival Instructions' : eventDetails.arrivalInstructions}
                         </Text>
                     </View>
+
+                    {/*Grey Line*/}
                     <View style={[GlobalStyles.greyLine, styles.lineStyling, ]}> </View>
+
+                    {/*About Section*/}
                     <View>
+                        {/*About Title*/}
                         <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
@@ -150,6 +172,7 @@ export const PublishPost = ({ route, navigation }) => {
                                 {' '}{'About'}
                             </Text>
                         </View>
+                        {/*Event Details*/}
                         <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, {color: GlobalColors.lightBlack, alignItems: "center"}]}>
                             {eventDetails.eventDetails}
                             {/*(typeof(eventDetails.eventDetails) !== undefined && eventDetails.eventDetails != null) 
@@ -205,7 +228,6 @@ export const PublishPost = ({ route, navigation }) => {
                 
             </TouchableOpacity>
         )
-       
     }
 
 
@@ -221,6 +243,9 @@ export const PublishPost = ({ route, navigation }) => {
         </View>
     );
 };
+
+
+
 
 const styles = StyleSheet.create({
     eventTitleSection: {
@@ -248,5 +273,10 @@ const styles = StyleSheet.create({
     },
     standardHoriMargin: {
         marginHorizontal: "1.25rem",
+    },
+    sticky: {
+        position: "fixed", 
+        top: 0, 
+        width: "100%"
     }
 });

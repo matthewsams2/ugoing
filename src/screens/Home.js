@@ -283,4 +283,10 @@ const styles = StyleSheet.create({
     iconSpacing: {
         marginHorizontal: "0.625rem",      
     },
+
+    sticky: {
+        position: "fixed", 
+        top: 0, 
+        width: "100%"
+    }
 });
