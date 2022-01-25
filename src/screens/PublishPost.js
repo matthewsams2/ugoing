@@ -14,6 +14,7 @@ import moment from "moment";
 // The below import isn't working for me -- setString fails
 //import Clipboard from "@react-native-community/clipboard";
 import { ShareComponent } from "../components/ShareComponent";
+import Footer from "../components/Footer"
 
 // route.params - eventID to event
 export const PublishPost = ({ route, navigation }) => {
@@ -160,18 +161,23 @@ export const PublishPost = ({ route, navigation }) => {
                             </Text>
                         </View>
                         <View style={[styles.eventDateText, {marginBottom: "0.75rem"}]}>
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
-                                {moment(eventDetails.startDate).format('MMM DD hh:mm a')}
-                            </Text>
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, {alignItems: "center"}]}>
-                                    
-                                {'To'}
-                            </Text>
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
-                                {moment(eventDetails.endDate).format('MMM DD hh:mm a')}
-                            </Text>
+                            <View></View>
+                            <View style = {GlobalStyles.columnContainer}>
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
+                                        
+                                    {moment(eventDetails.startDate).format('MMM DD hh:mm a') + '   '}
+                                </Text>
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, {alignItems: "center"}]}>
+                                        
+                                    {'To'}
+                                </Text>
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
+                                        
+                                    {'   ' + moment(eventDetails.endDate).format('MMM DD hh:mm a')}
+                                </Text>
+                            </View>
+                            <View></View>
+                            
                         </View>
                     </View>
                     <View style={[GlobalStyles.greyLine, styles.lineStyling, ]}> </View>
@@ -206,15 +212,15 @@ export const PublishPost = ({ route, navigation }) => {
                             </Text>
                         </View>
                         <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, {color: GlobalColors.lightBlack, alignItems: "center"}]}>
-                            {alert(eventDetails.eventDetails)}
-                            {(typeof(eventDetails.eventDetails) !== undefined && eventDetails.eventDetails != null) 
+                            {eventDetails.eventDetails}
+                            {/*(typeof(eventDetails.eventDetails) !== undefined && eventDetails.eventDetails != null) 
                                 (eventDetails.eventDetails == '') ? 'Event Details' : eventDetails.eventDetails.length <= 50 ? eventDetails.eventDetails.length : !toggleAboutText ? eventDetails.eventDetails.substring(0, 50) : eventDetails.eventDetails}
                                 {eventDetails.eventDetails.length > 50 &&
                                     <Text onPress = {toggleAboutTextLength} style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, {color: GlobalColors.standardRed, alignItems: "center", textDecorationLine: 'underline'}]}>
                                         {!toggleAboutText ? "View More" : "View Less"}
                                     </Text>
                                 
-                            }
+                                */}
                             
                             
                         </Text>
@@ -252,7 +258,7 @@ export const PublishPost = ({ route, navigation }) => {
                         source={require("../assets/Copy-Icon.svg")}
                     />  
                     <Text style={[GlobalStyles.buttonText2]}>
-                        Copy
+                        Copy Event Link
                     </Text>
                     
                 </View>
@@ -352,44 +358,11 @@ export const PublishPost = ({ route, navigation }) => {
         <View style={[GlobalStyles.container, {backgroundColor: GlobalColors.lightRed}]}>
             
             {getAddCalendarButton()}
-            {/*<View style={{ justifyContent: "flex-start" }}>
-                {getTitleSection()}
-                {getCongratsSection()}
-                <Text style={GlobalStyles.subheaderText}>Plan It 📅</Text>
-            </View>
-            */}
             {getEventCard()}
             {getShareButton()}
-            {/*
-            {getShareSection()}
-            */}
             <View style={GlobalStyles.bottomSection}>
-                {/*
-                <View style={{ width: "90%", marginBottom: 10 }}>
-                    <Text
-                        style={[GlobalStyles.bodyText, { textAlign: "center" }]}
-                    >
-                        To edit this event in the future {"\n"} create an
-                        account{" "}
-                    </Text>
-                </View>
-                <TouchableOpacity
-                    style={GlobalStyles.submitButton}
-                    onPress={() => {
-                        console.log(navigation);
-                        navigation.navigate("Signup");
-                    }}
-                >
-                    <Text style={GlobalStyles.buttonText}>Create Account</Text>
-                </TouchableOpacity>
-                <View style={{ width: "90%", marginBottom: 10 }}>
-                    <Text
-                        style={[GlobalStyles.bodyText, { textAlign: "center" }]}
-                    >
-                        (it only takes 30 seconds 😁)
-                    </Text>
-                </View>*/}
             </View>
+            <Footer homepage = "False" publish = "True"></Footer>
         </View>
     );
 };

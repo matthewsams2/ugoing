@@ -18,22 +18,26 @@ class Footer extends React.Component {
             <View style={[GlobalStyles.cardSection, styles.footerContainer, {backgroundColor: "white"}]}>
                <View style={[GlobalStyles.cardSection, styles.footerContainer, {borderWidth: 1, borderColor:'#FE3D3C', borderLeftColor: 'white', borderRightColor: 'white', borderBottomColor:'white'}]}>         
                     
-                    <Text style={[GlobalStyles.bodyText, {marginTop: "2.5rem", marginBottom: "2.5rem", textAlign: "center", color: "lightBlack", fontSize: 15}]}>
+                    {this.props.publish == "True" &&
+                    <Text style={[GlobalStyles.bodyText, {paddingTop: "2.5rem", paddingBottom: "2.5rem", textAlign: "center", color: "lightBlack", fontSize: 15}]}>
                         About Us
-                    </Text>     
+                    </Text>
+                    }
 
-                    <View style={[GlobalStyles.columnContainer, styles.columnContainer, {backgroundColor: '#FE3D3C'}]}>
+                    <View style={[GlobalStyles.columnContainer, {backgroundColor: '#FE3D3C', paddingTop: "0.9375rem", paddingBottom: "0.9375rem", }]}>
 
-                        <Text></Text>
+                        <View></View>
+                        {this.props.homepage == "False" &&
                         <Image
                             style={{width:"5.25rem", height:"1.6875rem", marginLeft: "1.5625rem"}}
                             source={require("../assets/UGoing_Logo_w.png")}
                             > 
                         </Image>
-                        <Text style={[GlobalStyles.bodyText, {marginTop: "0.9375rem", marginBottom: "0.9375rem", marginRight: "1.5625rem", textAlign: "center", color: "white", fontSize: 12}]}>
+                        }
+                        <Text style={[GlobalStyles.bodyText, {marginRight: "1.5625rem", textAlign: "center", color: "white", fontSize: 12}]}>
                              UGoing™ 2022. All rights reserved.
                         </Text>   
-                        <Text></Text>
+                        <View></View>
 
                     </View>   
 
