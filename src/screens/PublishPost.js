@@ -58,7 +58,7 @@ export const PublishPost = ({ route, navigation }) => {
     }
 
 
-    const getEventCard = () => {
+    const eventCard = () => {
         return (
             <View style={[GlobalStyles.tileSection, GlobalStyles.eventTileShadow, GlobalStyles.commonHorizontalMargin, {backgroundColor: "white"}]}>
                 <View style={GlobalStyles.commonMargin}>
@@ -169,7 +169,7 @@ export const PublishPost = ({ route, navigation }) => {
         );
     }
 
-    const getAddCalendarButton = () => {
+    const addCalendarButton = () => {
         return (
             <TouchableOpacity
                 style={[GlobalStyles.submitButton, GlobalStyles.commonHorizontalMargin, GlobalStyles.eventTopSpacing, styles.buttonSpacing, {width: "auto", marginBottom: "1.113em"}]}
@@ -183,7 +183,7 @@ export const PublishPost = ({ route, navigation }) => {
         )
     }
 
-    const getShareButton = () => {
+    const copyEventButton = () => {
         return (
             <TouchableOpacity
                 style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing, {width: "auto", marginTop: "1.25em"}]}
@@ -212,9 +212,9 @@ export const PublishPost = ({ route, navigation }) => {
     return (
         <View style={[GlobalStyles.container, {backgroundColor: GlobalColors.lightRed}]}>
             
-            {getAddCalendarButton()}
-            {getEventCard()}
-            {getShareButton()}
+            {addCalendarButton()}
+            {eventCard()}
+            {copyEventButton()}
             <View style={GlobalStyles.bottomSection}>
             </View>
             <Footer homepage = "False" publish = "True"></Footer>
