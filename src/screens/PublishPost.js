@@ -20,12 +20,11 @@ import Footer from "../components/Footer"
 export const PublishPost = ({ route, navigation }) => {
     //console.log("passed info is " + JSON.stringify(route.params));
     const [eventDetails, setEventDetails] = useState({});
-    const [url, setURL] = useState("");
+    const [url, setURL] = useState(""); 
 
     const { eventID } = route.params;
 
     const [toggleAboutText, setToggleAboutText] = useState({});
-
     useEffect(() => {
         if (eventID == "") {
             console.log("route params not found");
@@ -43,8 +42,8 @@ export const PublishPost = ({ route, navigation }) => {
                 } else {
                     console.log(
                         "ERROR: Document with eventID " +
-                            route.params +
-                            " not found!"
+                        route.params +
+                        " not found!"
                     );
                 }
             })
@@ -121,97 +120,97 @@ export const PublishPost = ({ route, navigation }) => {
 
     const getEventCard = () => {
         return (
-            <View style={[GlobalStyles.tileSection, GlobalStyles.eventTileShadow, GlobalStyles.commonHorizontalMargin, {backgroundColor: "white"}]}>
+            <View style={[GlobalStyles.tileSection, GlobalStyles.eventTileShadow, GlobalStyles.commonHorizontalMargin, { backgroundColor: "white" }]}>
                 <View style={GlobalStyles.commonMargin}>
                     <View>
-                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextBig, GlobalStyles.extraBold, {marginBottom: "0.934rem"}]}>
+                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextBig, GlobalStyles.extraBold, { marginBottom: "0.934rem" }]}>
                             {eventDetails.eventName}
                         </Text>
-                        <View style={[styles.eventTextAndIcons, {marginBottom: "0.5rem"}]}>
-                            <Image 
-                                style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
+                        <View style={[styles.eventTextAndIcons, { marginBottom: "0.5rem" }]}>
+                            <Image
+                                style={{ width: "0.8125rem", height: "0.8125rem", margin: "auto auto auto auto" }}
                                 source={require("../assets/EventOrganizer-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold,{color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                 {' '}{eventDetails.organizerName}
                             </Text>
                         </View>
-                        <View style={[styles.eventTextAndIcons, {marginBottom: "0.5rem"}]}>
-                            <Image 
-                                style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
+                        <View style={[styles.eventTextAndIcons, { marginBottom: "0.5rem" }]}>
+                            <Image
+                                style={{ width: "0.8125rem", height: "0.8125rem", margin: "auto auto auto auto" }}
                                 source={require("../assets/EventPhone-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                 {' '}{eventDetails.phoneNumber}
                             </Text>
                         </View>
                     </View>
                     <View style={[GlobalStyles.greyLine, styles.lineStyling]}> </View>
                     <View>
-                        <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
-                            <Image 
-                                style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
+                        <View style={[styles.eventTextAndIcons, { marginBottom: "0.75rem" }]}>
+                            <Image
+                                style={{ width: "0.8125rem", height: "0.8125rem", margin: "auto auto auto auto" }}
                                 source={require("../assets/EventCalendar-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'Date'}
                             </Text>
                         </View>
-                        <View style={[styles.eventDateText, {marginBottom: "0.75rem"}]}>
+                        <View style={[styles.eventDateText, { marginBottom: "0.75rem" }]}>
                             <View></View>
-                            <View style = {GlobalStyles.columnContainer}>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                        
+                            <View style={GlobalStyles.columnContainer}>
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                     {moment(eventDetails.startDate).format('MMM DD hh:mm a') + '   '}
                                 </Text>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, {alignItems: "center"}]}>
-                                        
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, { alignItems: "center" }]}>
+
                                     {'To'}
                                 </Text>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                        
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                     {'   ' + moment(eventDetails.endDate).format('MMM DD hh:mm a')}
                                 </Text>
                             </View>
                             <View></View>
-                            
+
                         </View>
                     </View>
-                    <View style={[GlobalStyles.greyLine, styles.lineStyling, ]}> </View>
+                    <View style={[GlobalStyles.greyLine, styles.lineStyling,]}> </View>
                     <View>
-                        <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
-                            <Image 
-                                style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
+                        <View style={[styles.eventTextAndIcons, { marginBottom: "0.75rem" }]}>
+                            <Image
+                                style={{ width: "0.8125rem", height: "0.8125rem", margin: "auto auto auto auto" }}
                                 source={require("../assets/EventLocation-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'Location'}
                             </Text>
                         </View>
-                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, , {color: GlobalColors.lightBlack, alignItems: "center", marginBottom: "0.625rem", textDecorationLine: 'underline'}]}>
+                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, , { color: GlobalColors.lightBlack, alignItems: "center", marginBottom: "0.625rem", textDecorationLine: 'underline' }]}>
                             {eventDetails.eventLocation == '' ? 'Event Location' : eventDetails.eventLocation}
                         </Text>
-                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, , {color: GlobalColors.standardBlue, alignItems: "center", marginBottom: "0.625rem"}]}>
+                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, , { color: GlobalColors.standardBlue, alignItems: "center", marginBottom: "0.625rem" }]}>
                             {eventDetails.arrivalInstructions == '' ? 'Arrival Instructions' : eventDetails.arrivalInstructions}
                         </Text>
                     </View>
-                    <View style={[GlobalStyles.greyLine, styles.lineStyling, ]}> </View>
+                    <View style={[GlobalStyles.greyLine, styles.lineStyling,]}> </View>
                     <View>
-                        <View style={[styles.eventTextAndIcons, {marginBottom: "0.75rem"}]}>
-                            <Image 
-                                style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
+                        <View style={[styles.eventTextAndIcons, { marginBottom: "0.75rem" }]}>
+                            <Image
+                                style={{ width: "0.8125rem", height: "0.8125rem", margin: "auto auto auto auto" }}
                                 source={require("../assets/EventAbout-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'About'}
                             </Text>
                         </View>
-                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, {color: GlobalColors.lightBlack, alignItems: "center"}]}>
+                        <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextSmall, { color: GlobalColors.lightBlack, alignItems: "center" }]}>
                             {eventDetails.eventDetails}
                             {/*(typeof(eventDetails.eventDetails) !== undefined && eventDetails.eventDetails != null) 
                                 (eventDetails.eventDetails == '') ? 'Event Details' : eventDetails.eventDetails.length <= 50 ? eventDetails.eventDetails.length : !toggleAboutText ? eventDetails.eventDetails.substring(0, 50) : eventDetails.eventDetails}
@@ -221,8 +220,8 @@ export const PublishPost = ({ route, navigation }) => {
                                     </Text>
                                 
                                 */}
-                            
-                            
+
+
                         </Text>
                     </View>
                 </View>
@@ -233,7 +232,7 @@ export const PublishPost = ({ route, navigation }) => {
     const getAddCalendarButton = () => {
         return (
             <TouchableOpacity
-                style={[GlobalStyles.submitButton, GlobalStyles.commonHorizontalMargin, GlobalStyles.eventTopSpacing, styles.buttonSpacing, {width: "auto", marginBottom: "1.113em"}]}
+                style={[GlobalStyles.submitButton, GlobalStyles.commonHorizontalMargin, GlobalStyles.eventTopSpacing, styles.buttonSpacing, { width: "auto", marginBottom: "1.113em", position: "sticky"}]}
                 onPress={() => {
                     console.log(navigation);
                     navigation.navigate("Signup");
@@ -247,26 +246,26 @@ export const PublishPost = ({ route, navigation }) => {
     const getShareButton = () => {
         return (
             <TouchableOpacity
-                style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing, {width: "auto", marginTop: "1.25em"}]}
+                style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing, { width: "auto", marginTop: "1.25em" }]}
                 onPress={() => {
                     Clipboard.setString(url);
                 }}
             >
                 <View style={[styles.eventTextAndIcons]}>
-                    <Image 
-                        style={{width: "1.281rem", height: "1.281rem", margin: "auto auto auto auto"}}
+                    <Image
+                        style={{ width: "1.281rem", height: "1.281rem", margin: "auto auto auto auto" }}
                         source={require("../assets/Copy-Icon.svg")}
-                    />  
+                    />
                     <Text style={[GlobalStyles.buttonText2]}>
                         Copy Event Link
                     </Text>
-                    
+
                 </View>
-                
-                
+
+
             </TouchableOpacity>
         )
-       
+
     }
 
     const getShareSection = () => {
@@ -355,14 +354,14 @@ export const PublishPost = ({ route, navigation }) => {
     };
 
     return (
-        <View style={[GlobalStyles.container, {backgroundColor: GlobalColors.lightRed}]}>
-            
+        <View style={[GlobalStyles.container, { backgroundColor: GlobalColors.lightRed }]}>
+
             {getAddCalendarButton()}
             {getEventCard()}
             {getShareButton()}
             <View style={GlobalStyles.bottomSection}>
             </View>
-            <Footer homepage = "False" publish = "True"></Footer>
+            <Footer homepage="False" publish="True"></Footer>
         </View>
     );
 };
@@ -378,14 +377,14 @@ const styles = StyleSheet.create({
 
     },
     eventTextAndIcons: {
-        alignItems: "center", 
-        flexDirection: "row", 
-        justifyContent: 'center', 
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: 'center',
     },
     eventDateText: {
-        alignItems: "center", 
-        flexDirection: "row", 
-        justifyContent: 'space-between', 
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: 'space-between',
     },
     lineStyling: {
         marginVertical: "1.25rem",
