@@ -16,7 +16,7 @@ class Footer extends React.Component {
         return (
             /*Footer Container for Event Creation (i.e. condensed) */
             <View style={[GlobalStyles.cardSection, styles.footerContainer, {backgroundColor: "white"}]}>
-               <View style={[GlobalStyles.cardSection, styles.footerContainer, {borderWidth: 1, borderColor:'#FE3D3C', borderLeftColor: 'white', borderRightColor: 'white', borderBottomColor:'white'}]}>         
+               <View style={[GlobalStyles.cardSection, styles.footerContainer, {borderWidth: 1, borderColor: this.props.homepage == "True" ? GlobalColors.darkGrey: GlobalColors.standardRed, borderLeftColor: 'white', borderRightColor: 'white', borderBottomColor:'white'}]}>         
                     
                     {this.props.publish == "True" &&
                     <Text style={[GlobalStyles.bodyText, {paddingTop: "2.5rem", paddingBottom: "2.5rem", textAlign: "center", color: "lightBlack", fontSize: 15}]}>
@@ -24,7 +24,7 @@ class Footer extends React.Component {
                     </Text>
                     }
 
-                    <View style={[GlobalStyles.columnContainer, {backgroundColor: '#FE3D3C', paddingTop: "0.9375rem", paddingBottom: "0.9375rem", }]}>
+                    <View style={[GlobalStyles.columnContainer, {backgroundColor: this.props.homepage == "True" ? GlobalColors.darkGrey: GlobalColors.standardRed, paddingTop: "0.9375rem", paddingBottom: "0.9375rem", }]}>
 
                         <View></View>
                         {this.props.homepage == "False" &&

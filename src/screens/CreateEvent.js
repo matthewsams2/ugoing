@@ -473,7 +473,7 @@ export const CreateEvent = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={GlobalStyles.errorText}>{errorStatus}</Text>
             </View>
-            <Footer homepage = "False"></Footer>
+            <Footer homepage = "False" publish = "False"></Footer>
         </View>
     );
 };

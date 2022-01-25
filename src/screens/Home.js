@@ -228,7 +228,7 @@ export const HomeScreen = ({ navigation }) => {
             
                 </View>
             
-            <Footer homepage="true"></Footer>
+            <Footer homepage="True" publish = "False"></Footer>
         </View>
     );
 };
