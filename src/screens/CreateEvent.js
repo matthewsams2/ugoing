@@ -261,6 +261,7 @@ export const CreateEvent = ({ navigation }) => {
                             
                             <MobileView>
                                     <Flatpickr
+                                    
                                         options={{
                                             enableTime: true,
                                             time_24hr: false,
@@ -349,7 +350,6 @@ export const CreateEvent = ({ navigation }) => {
                                 </BrowserView>
                                 <MobileView>
                                     <Flatpickr
-                                        ref={fp => this.flatpickr= fp}
                                         
                                         //onChange={(dates) => onChangeDate(dates, true)}
                                         options={{
@@ -473,7 +473,7 @@ export const CreateEvent = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={GlobalStyles.errorText}>{errorStatus}</Text>
             </View>
-            <Footer homepage = "False" publish = "False"></Footer>
+            <Footer homepage = {false} publish = {false}></Footer>
         </View>
     );
 };

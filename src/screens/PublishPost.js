@@ -107,7 +107,7 @@ export const PublishPost = ({ route, navigation }) => {
                             </Text>
                         </View>
                         {/*Start and End time*/}
-                        <View style={[styles.eventDateText, {marginBottom: "0.75rem"}]}>
+                        <View style={[GlobalStyles.centerObjectsInMiddle, {marginBottom: "0.75rem"}]}>
                             <View></View>
                             <View style = {GlobalStyles.columnContainer}>
                                 <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
@@ -230,6 +230,20 @@ export const PublishPost = ({ route, navigation }) => {
         )
     }
 
+    const feedbackButton = () => {
+        return (
+            <TouchableOpacity 
+                style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing,  {width: "auto", marginTop: "1.25em", }]}
+                onPress = {() => navigation.navigate("FeedbackHome")}
+            >
+                <Text style={[GlobalStyles.buttonText2]}>
+                    Give Feedback
+                </Text>
+                
+                
+            </TouchableOpacity>
+        )
+    }
 
     return (
         <View style={[GlobalStyles.container, {backgroundColor: GlobalColors.lightRed}]}>
@@ -237,9 +251,10 @@ export const PublishPost = ({ route, navigation }) => {
             {addCalendarButton()}
             {eventCard()}
             {copyEventButton()}
+            {feedbackButton()}
             <View style={GlobalStyles.bottomSection}>
             </View>
-            <Footer homepage = "False" publish = "True"></Footer>
+            <Footer homepage = {false} publish = {true} navigation={navigation}></Footer>
         </View>
     );
 };
@@ -261,11 +276,6 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         flexDirection: "row", 
         justifyContent: 'center', 
-    },
-    eventDateText: {
-        alignItems: "center", 
-        flexDirection: "row", 
-        justifyContent: 'space-between', 
     },
     lineStyling: {
         marginVertical: "1.25rem",

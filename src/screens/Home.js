@@ -189,7 +189,7 @@ export const HomeScreen = ({ navigation }) => {
 
 
                             {/*Body text*/}
-                            <Text style={[GlobalStyles.bodyText, {marginBottom: "4.75rem", color: "#6F7480", marginHorizontal: "2.906rem"}]}>
+                            <Text style={[GlobalStyles.bodyText, { color: "#6F7480", marginHorizontal: "2.906rem"}]}>
                                 UGoing lets you add events directly into your preferred calendar.
                                 {'\n'}
                                 {'\n'}
@@ -198,37 +198,55 @@ export const HomeScreen = ({ navigation }) => {
                         </View>
                     </View>
 
+                    {/* */}
+                    <View style={[GlobalStyles.cardSection, {backgroundColor: GlobalColors.white, }]}>
 
-                    {/*sixth: Tile Section */}
-                    <View style={[GlobalStyles.tileSection, GlobalStyles.tileShadow, GlobalStyles.commonHorizontalMargin, styles.titleSection, {backgroundColor: GlobalColors.white}]}>
-                        <Text style={[GlobalStyles.headerText, {marginBottom: "3rem"}]}>
-                            And it’s all free!
-                        </Text>
+                        <View style={{position: "absolute", top: "58.380%", left: 0, width: "100%", height: "41.619%", backgroundColor: GlobalColors.darkGrey}}></View>
+                        <View>
+                            {/*sixth: Tile Section */}
+                            <View style={[GlobalStyles.tileSection, GlobalStyles.tileShadow, GlobalStyles.commonHorizontalMargin, styles.titleSection, 
+                                {backgroundColor: GlobalColors.white, marginBottom: "3.375rem", marginTop: "4.75rem"}]}>
+                                <Text style={[GlobalStyles.headerText, {marginBottom: "3rem", backgroundColor: "white"}]}>
+                                    And it’s all free!
+                                </Text>
 
-                        <Text style={[GlobalStyles.bodyText, {marginBottom: "4.75rem", color: GlobalColors.lightBlack, marginHorizontal: "2.906rem", textAlign: "center", marginBottom: "4.5625rem"}]}>
-                            Create as many events as you want
-                            {'\n'}
-                            Free to create events
-                            {'\n'}
-                            Free for your guests
-                        </Text>
+                                <Text style={[GlobalStyles.bodyText, {marginBottom: "4.75rem", color: GlobalColors.lightBlack, marginHorizontal: "2.906rem", textAlign: "center", marginBottom: "4.5625rem"}]}>
+                                    Create as many events as you want
+                                    {'\n'}
+                                    Free to create events
+                                    {'\n'}
+                                    Free for your guests
+                                </Text>
 
-                        {/*Create Event Button*/}
-                        <TouchableOpacity style={[GlobalStyles.submitButton, {marginBottom: "3.125rem"}]}
-                            onPress={() => {
-                                navigation.navigate("Create");
-                            }}
-                        >
-                            <Text style={[GlobalStyles.buttonText, {width: "11.75rem"}]}>
-                                Create Event
-                            </Text>
-                        </TouchableOpacity>
+                                {/*Create Event Button*/}
+                                <TouchableOpacity style={[GlobalStyles.submitButton, {marginBottom: "3.125rem"}]}
+                                    onPress={() => {
+                                        navigation.navigate("Create");
+                                    }}
+                                >
+                                    <Text style={[GlobalStyles.buttonText, {width: "11.75rem"}]}>
+                                        Create Event
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
+                            
+                            
+
+                            
+
+                            
+                        
+
                     </View>
+                    
+                    
 
             
                 </View>
             
-            <Footer homepage="True" publish = "False"></Footer>
+            <Footer homepage={true} publish = {false} navigation = {navigation} ></Footer>
         </View>
     );
 };
@@ -284,9 +302,4 @@ const styles = StyleSheet.create({
         marginHorizontal: "0.625rem",      
     },
 
-    sticky: {
-        position: "fixed", 
-        top: 0, 
-        width: "100%"
-    }
 });

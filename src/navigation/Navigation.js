@@ -23,8 +23,11 @@ import { PublishedEvent } from "../screens/PublishedEvent";
 import { AboutScreen } from "../screens/About";
 import { TOS } from "../screens/TermsOfService";
 import { PrivacyPolicy } from "../screens/PrivacyPolicy";
+import { FeedbackHome } from "../screens/Feedback/FeedbackHome";
+import { FeedbackThankYou } from "../screens/Feedback/FeedbackThankYou";
 import { Footer } from "../components/Footer";
 import { Tabs } from "antd";
+import { GlobalStyles } from "../styles/GlobalStyles";
 
 const isWeb = Platform.OS === "web";
 
@@ -111,6 +114,18 @@ export const AppNavigator = () => {
             Signup: "signup",
             Event: {
                 path: "u/:eventID?",
+                parse: {
+                    eventID: (eventID) => `${eventID}`,
+                },
+            },
+            FeedbackHome: {
+                path: "feedback/:eventID?",
+                parse: {
+                    eventID: (eventID) => `${eventID}`,
+                },
+            },
+            FeedbackThankYou: {
+                path: "thankyou/:eventID?",
                 parse: {
                     eventID: (eventID) => `${eventID}`,
                 },
@@ -256,6 +271,32 @@ export const AppNavigator = () => {
                             // },
                         })}
                     />
+                    <Stack.Screen
+                        name="FeedbackHome"
+                        component={FeedbackHome}
+                        options={({ navigation, route}) => ({
+                            title: "",
+                            headerTitleAlign: "center",
+                            headerLeft: () => null,
+                            headerTitle: () => {
+                                return headerLogo(navigation);
+                            },
+                            headerStyle: [styles.boxShadow, {borderBottomColor: "white"}]
+                        })}
+                    />
+                    <Stack.Screen
+                        name="FeedbackThankYou"
+                        component={FeedbackThankYou}
+                        options={({ navigation, route }) => ({
+                            title: "",
+                            headerTitleAlign: "center",
+                            headerLeft: () => null,
+                            headerTitle: () => {
+                                return headerLogo(navigation);
+                            },
+                            headerStyle: [styles.boxShadow, {borderBottomColor: "white"}]
+                        })}
+                    />
                 </Stack.Navigator>
             </NavigationContainer>
         </AuthContext.Provider>
@@ -276,4 +317,7 @@ const styles = StyleSheet.create({
     bigHeader: {
         height: '7.625rem'
     },
+    headerShadows: {
+        boxShadow: "0px 4px 30px rgba(0, 0, 0, 0.1)"
+    }
 });

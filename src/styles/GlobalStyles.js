@@ -23,6 +23,8 @@ export const GlobalColors = {
     powderBlue: "#b5d6d6",
     celeste: "#9cf6f6",
 
+    white: "#FFF",
+
     // tints
     light: "#E46C6C",
     lighter: "#ED9D9D",
@@ -94,6 +96,10 @@ export const GlobalStyles = StyleSheet.create({
         marginHorizontal: "2.906rem",
         marginTop: "4.375rem",
     },
+    maxWidth: {
+        width: "86.66%", 
+        maxWidth: "20.3125rem"
+    },
     //bolden text
     extraBold: {
         fontFamily: "GilroyExtraBold",
@@ -107,7 +113,20 @@ export const GlobalStyles = StyleSheet.create({
     tileSection: {
        borderRadius: 15,
        justifyContent: "center",
-       textAlign: "center"
+       textAlign: "center",
+    },
+    tileSection2: {
+        borderRadius: 8,
+        justifyContent: "center",
+        textAlign: "center",
+        maxWidth: "40rem",
+        width: "100%",
+        marginHorizontal: "auto",
+        backgroundColor: GlobalColors.lightRed
+     },
+    gilRoy: {
+        paddingTop: "0.25rem",
+        fontFamily: "Gilroy",
     },
     tileShadow: {
         boxShadow: "0px -6px 50px #ABBAC2",
@@ -130,6 +149,19 @@ export const GlobalStyles = StyleSheet.create({
     },
     eventTextSmall: {
         fontSize: "0.813rem"
+    },
+    eventTitle: {
+        marginTop: "1.5rem",
+        textAlign: "center"
+    },
+    underline: {
+        textDecorationLine: 'underline',
+    },
+    //center objects and keep it contained in the middle of the screen
+    centerObjectsInMiddle: {
+        alignItems: "center", 
+        flexDirection: "row", 
+        justifyContent: 'space-between', 
     },
 
     descriptionText: {
@@ -190,6 +222,10 @@ export const GlobalStyles = StyleSheet.create({
         justifyContent: "center",
         flexDirection: "row",
     },
+    //disabled submit button color
+    disabled_submitButton: {
+        backgroundColor: GlobalColors.lightestGrey,
+    },
     //white button with red outlines and text
     submitButton2: {
         borderRadius: "0.5rem",
@@ -201,6 +237,47 @@ export const GlobalStyles = StyleSheet.create({
         flexDirection: "row",
         borderColor: GlobalColors.standardRed,
         borderWidth: 1,
+    },
+    //white button with black outlines and text
+    feedbackButton: {
+        width: "6.25rem",
+        height: "3.25rem",
+        backgroundColor: "white",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        borderColor: GlobalColors.lightestGrey,
+        borderWidth: 1,
+        borderRadius: "0.625rem",
+    },
+    feedbackButton2: {
+        width: "12.125rem",
+        height: "1.813rem",
+        backgroundColor: "white",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        borderColor: GlobalColors.lightestGrey,
+        borderWidth: 1,
+        borderRadius: "0.9375rem",
+    },
+    feedbackButton3: {
+        width: "7rem",
+        height: "1.813rem",
+        backgroundColor: "white",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        borderColor: GlobalColors.lightestGrey,
+        borderWidth: 1,
+        borderRadius: "0.9375rem",
+    },
+    feedbackButton_Pressed: {
+        borderColor: GlobalColors.darkGrey,
+        backgroundColor: GlobalColors.lightestGrey,
+    },
+    feedbackButton_UnPressed: {
+
     },
     timeButton: {
         width: 150,
