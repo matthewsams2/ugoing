@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     Text,
     Platform,
+    Dimensions,
     View
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -30,6 +31,8 @@ import { Tabs } from "antd";
 import { GlobalStyles } from "../styles/GlobalStyles";
 
 const isWeb = Platform.OS === "web";
+
+const width = Dimensions.get('window').width
 
 function headerLogo(navigation, bigLogo) {
     return (
@@ -169,7 +172,7 @@ export const AppNavigator = () => {
                             headerRight: () => {
                                 return loginButton(navigation);
                             },
-                            headerStyle: {borderBottomColor: "white"}
+                            headerStyle: [width < 390 && styles.smallHeader, {borderBottomColor: "white"}]
                         })}
                     />
                     <Stack.Screen
@@ -183,7 +186,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation);
                             },
-                            headerStyle: {borderBottomColor: "white",}
+                            headerStyle: [width < 390 && styles.smallHeader, {borderBottomColor: "white"}]
                         })}
                     />
                     <Stack.Screen
@@ -195,7 +198,7 @@ export const AppNavigator = () => {
                             headerLeft: () => {
                                 return headerLogo(navigation);
                             },
-                            headerStyle: {borderBottomColor: "white"}
+                            headerStyle: [width < 390 && styles.smallHeader, {borderBottomColor: "white"}]
                         })}
                     />
                     <Stack.Screen
@@ -231,7 +234,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation, true);
                             },
-                            headerStyle: [styles.headerStyle, {borderBottomWidth: 1}]
+                            headerStyle: [styles.headerStyle, width < 390 && styles.smallHeader, {borderBottomWidth: 1}]
                             // headerRight: () => {
                             //     return loginButton(navigation);
                             // },
@@ -248,7 +251,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation, true);
                             },
-                            headerStyle: [styles.headerStyle, {borderBottomWidth: 1}]
+                            headerStyle: [styles.headerStyle, width < 390 && styles.smallHeader, {borderBottomWidth: 1}]
                             // headerRight: () => {
                             //     return loginButton(navigation);
                             // },
@@ -265,7 +268,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation, true);
                             },
-                            headerStyle: [styles.headerStyle, {borderBottomWidth: 1}]
+                            headerStyle: [styles.headerStyle, width < 390 && styles.smallHeader, {borderBottomWidth: 1}]
                             // headerRight: () => {
                             //     return loginButton(navigation);
                             // },
@@ -281,7 +284,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation);
                             },
-                            headerStyle: [styles.boxShadow, {borderBottomColor: "white"}]
+                            headerStyle: [styles.boxShadow, width < 390 && styles.smallHeader, {borderBottomColor: "white"}]
                         })}
                     />
                     <Stack.Screen
@@ -294,7 +297,7 @@ export const AppNavigator = () => {
                             headerTitle: () => {
                                 return headerLogo(navigation);
                             },
-                            headerStyle: [styles.boxShadow, {borderBottomColor: "white"}]
+                            headerStyle: [styles.boxShadow, width < 390 && styles.smallHeader, {borderBottomColor: "white"}]
                         })}
                     />
                 </Stack.Navigator>
@@ -316,6 +319,9 @@ const styles = StyleSheet.create({
     },
     bigHeader: {
         height: '7.625rem'
+    },
+    smallHeader: {
+        height: '2.5rem'
     },
     headerShadows: {
         boxShadow: "0px 4px 30px rgba(0, 0, 0, 0.1)"

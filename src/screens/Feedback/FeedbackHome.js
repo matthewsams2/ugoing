@@ -4,7 +4,8 @@ import {
     View,
     StyleSheet,
     TouchableOpacity,
-    Image
+    Image,
+    Dimensions
 } from "react-native";
 import { Radio, NativeBaseProvider, Center, Input, Box, extendTheme, TextArea } from 'native-base';
 import { GlobalStyles, GlobalColors } from "../../styles/GlobalStyles";
@@ -20,6 +21,8 @@ export const FeedbackHome = ({ navigation }) => {
     const [userRating, setUserRating] = useState(false)
     const [value, setValue] = useState(0)
     const [email, setEmail] = useState('')
+    const height = Dimensions.get('window').height
+    const width = Dimensions.get('window').width
 
     const handleEmailInput = (email) => {
         setEmail(email)
@@ -92,38 +95,73 @@ export const FeedbackHome = ({ navigation }) => {
                         <Text style={[GlobalStyles.eventText, GlobalStyles.eventTitle, GlobalStyles.eventTextBig, GlobalStyles.commonHorizontalMargin, {marginTop: 0}]}>
                             Please select one or more issues
                         </Text>
-                        <View style={[GlobalStyles.columnContainer, GlobalStyles.commonMargin]}>
-                            <View></View>
-                            <View style={GlobalStyles.columnContainer}>
-                                <TouchableOpacity onPress={() => toggleIssueButton(1)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 1 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginRight: "2rem", marginLeft: 0, }]}>
-                                    <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
-                                        Missing Features
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => toggleIssueButton(2)} style={[GlobalStyles.feedbackButton3, feedbackButtonPressed && issue == 2 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
-                                    <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
-                                        Laggy
-                                    </Text>
-                                </TouchableOpacity>
+                        {width >= 390 ? 
+                            <View>
+                                <View style={[GlobalStyles.columnContainer, GlobalStyles.commonMargin]}>
+                                    <View></View>
+                                    <View style={GlobalStyles.columnContainer}>
+                                        <TouchableOpacity onPress={() => toggleIssueButton(1)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 1 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginRight: "2rem", marginLeft: 0, }]}>
+                                            <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                                Missing Features
+                                            </Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => toggleIssueButton(2)} style={[GlobalStyles.feedbackButton3, feedbackButtonPressed && issue == 2 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
+                                            <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                                Laggy
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View></View>
+                                </View>
+                                <View style={[GlobalStyles.columnContainer]}>
+                                    <View></View>
+                                    <View style={GlobalStyles.columnContainer}>
+                                        <TouchableOpacity onPress={() => toggleIssueButton(3)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 3 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginRight: "2rem", marginLeft: 0, }]}>
+                                            <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                                Not Work As Expected
+                                            </Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => toggleIssueButton(4)} style={[GlobalStyles.feedbackButton3, feedbackButtonPressed && issue == 4 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
+                                            <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                                Other
+                                            </Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View></View>
+                                </View>
                             </View>
-                            <View></View>
-                        </View>
-                        <View style={[GlobalStyles.columnContainer]}>
-                            <View></View>
-                            <View style={GlobalStyles.columnContainer}>
-                                <TouchableOpacity onPress={() => toggleIssueButton(3)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 3 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginRight: "2rem", marginLeft: 0, }]}>
-                                    <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
-                                        Not Work As Expected
-                                    </Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => toggleIssueButton(4)} style={[GlobalStyles.feedbackButton3, feedbackButtonPressed && issue == 4 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
-                                    <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
-                                        Other
-                                    </Text>
-                                </TouchableOpacity>
+                        : 
+                            <View>
+                                <View style={[styles.smallScreen_buttonMargin]}>
+                                    <TouchableOpacity onPress={() => toggleIssueButton(1)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 1 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginLeft: 0, }]}>
+                                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                            Missing Features
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={[styles.smallScreen_buttonMargin]}>
+                                    <TouchableOpacity onPress={() => toggleIssueButton(2)} style={[GlobalStyles.feedbackButton2, feedbackButtonPressed && issue == 2 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
+                                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                            Laggy
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={[styles.smallScreen_buttonMargin]}>
+                                    <TouchableOpacity onPress={() => toggleIssueButton(3)} style={[GlobalStyles.feedbackButton2, issueButtonPressed && issue == 3 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed, { marginLeft: 0, }]}>
+                                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                            Not Work As Expected
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={[styles.smallScreen_buttonMargin]}>
+                                    <TouchableOpacity onPress={() => toggleIssueButton(4)} style={[GlobalStyles.feedbackButton2, feedbackButtonPressed && issue == 4 ? GlobalStyles.feedbackButton_Pressed : GlobalStyles.feedbackButton_UnPressed]}>
+                                        <Text style={[GlobalStyles.eventText, GlobalStyles.eventTextMedium]}>
+                                            Other
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
-                            <View></View>
-                        </View>
+                        }
                         {issueButtonPressed && 
                             <View>
                                 <View style={[GlobalStyles.commonMargin]}>
@@ -134,7 +172,7 @@ export const FeedbackHome = ({ navigation }) => {
                                         <View style={[GlobalStyles.commonMargin, { marginTop: 0 }]}>
                                             <NativeBaseProvider>
                                                 <Box alignItems="center" >
-                                                    <TextArea mx="3" height="10rem" placeholder="Enter your email address" w="100%" fontFamily={"gilroy"} outline={GlobalColors.darkGrey} borderRadius={"0.375rem"} backgroundColor={"white"} />
+                                                    <TextArea mx="3" height="10rem" placeholder="Please specify your issues" w="100%" fontFamily={"gilroy"} outline={GlobalColors.darkGrey} borderRadius={"0.375rem"} backgroundColor={"white"} />
                                                 </Box>
                                             </NativeBaseProvider>
                                         </View>
@@ -244,4 +282,9 @@ const styles = StyleSheet.create({
         width: "15.875rem",
         marginHorizontal: "auto"
     },
+    smallScreen_buttonMargin: {
+        marginHorizontal: "auto", 
+        marginBottom: 0,
+        marginTop: "0.9375rem"
+    }
 });

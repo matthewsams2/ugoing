@@ -255,10 +255,7 @@ export const PublishPost = ({ route, navigation }) => {
             {feedbackButton()}
             <View style={GlobalStyles.bottomSection}>
             </View>
-            <Footer homepage = {false} publish = {true} navigation={navigation}></Footer>
-            <View style={GlobalStyles.bottomSection}>
-            </View>
-            <Footer homepage="False" publish="True"></Footer>
+            <Footer homepage={false} publish={true}></Footer>
         </View>
     );
 };
