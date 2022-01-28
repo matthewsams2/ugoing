@@ -20,7 +20,7 @@ import Footer from "../components/Footer"
 export const PublishPost = ({ route, navigation }) => {
     //console.log("passed info is " + JSON.stringify(route.params));
     const [eventDetails, setEventDetails] = useState({});
-    const [url, setURL] = useState("");
+    const [url, setURL] = useState(""); 
 
     const { eventID } = route.params;
 
@@ -44,8 +44,8 @@ export const PublishPost = ({ route, navigation }) => {
                 } else {
                     console.log(
                         "ERROR: Document with eventID " +
-                            route.params +
-                            " not found!"
+                        route.params +
+                        " not found!"
                     );
                 }
             })
@@ -72,9 +72,9 @@ export const PublishPost = ({ route, navigation }) => {
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
                                 source={require("../assets/EventOrganizer-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold,{color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                 {' '}{eventDetails.organizerName}
                             </Text>
                         </View>
@@ -83,9 +83,9 @@ export const PublishPost = ({ route, navigation }) => {
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
                                 source={require("../assets/EventPhone-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                 {' '}{eventDetails.phoneNumber}
                             </Text>
                         </View>
@@ -100,32 +100,33 @@ export const PublishPost = ({ route, navigation }) => {
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
                                 source={require("../assets/EventCalendar-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'Date'}
                             </Text>
                         </View>
                         {/*Start and End time*/}
                         <View style={[GlobalStyles.centerObjectsInMiddle, {marginBottom: "0.75rem"}]}>
                             <View></View>
-                            <View style = {GlobalStyles.columnContainer}>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                        
+                            <View style={GlobalStyles.columnContainer}>
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                     {moment(eventDetails.startDate).format('MMM DD hh:mm a') + '   '}
                                 </Text>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, {alignItems: "center"}]}>
-                                        
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, { alignItems: "center" }]}>
+
                                     {'To'}
                                 </Text>
-                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.standardRed, alignItems: "center"}]}>
-                                        
+                                <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.standardRed, alignItems: "center" }]}>
+
                                     {'   ' + moment(eventDetails.endDate).format('MMM DD hh:mm a')}
                                 </Text>
                             </View>
                             <View></View>
-                            
+
                         </View>
+                        
                     </View>
 
                     {/*Grey Line*/}
@@ -138,9 +139,9 @@ export const PublishPost = ({ route, navigation }) => {
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
                                 source={require("../assets/EventLocation-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'Location'}
                             </Text>
                         </View>
@@ -166,9 +167,9 @@ export const PublishPost = ({ route, navigation }) => {
                             <Image 
                                 style={{width:"0.8125rem", height:"0.8125rem", margin: "auto auto auto auto"}}
                                 source={require("../assets/EventAbout-Icon.svg")}
-                            />  
-                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, {color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem"}]}>
-                                    
+                            />
+                            <Text style={[GlobalStyles.bodyText, GlobalStyles.eventTextMedium, GlobalStyles.semiBold, { color: GlobalColors.lightGrey, alignItems: "center", paddingTop: "0.17rem" }]}>
+
                                 {' '}{'About'}
                             </Text>
                         </View>
@@ -183,8 +184,8 @@ export const PublishPost = ({ route, navigation }) => {
                                     </Text>
                                 
                                 */}
-                            
-                            
+
+
                         </Text>
                     </View>
                 </View>
@@ -195,7 +196,7 @@ export const PublishPost = ({ route, navigation }) => {
     const addCalendarButton = () => {
         return (
             <TouchableOpacity
-                style={[GlobalStyles.submitButton, GlobalStyles.commonHorizontalMargin, GlobalStyles.eventTopSpacing, styles.buttonSpacing, {width: "auto", marginBottom: "1.113em"}]}
+                style={[GlobalStyles.submitButton, GlobalStyles.commonHorizontalMargin, GlobalStyles.eventTopSpacing, styles.buttonSpacing, { width: "auto", marginBottom: "1.113em", position: "sticky"}]}
                 onPress={() => {
                     console.log(navigation);
                     navigation.navigate("Signup");
@@ -209,23 +210,23 @@ export const PublishPost = ({ route, navigation }) => {
     const copyEventButton = () => {
         return (
             <TouchableOpacity
-                style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing, {width: "auto", marginTop: "1.25em"}]}
+                style={[GlobalStyles.submitButton2, GlobalStyles.commonHorizontalMargin, styles.buttonSpacing, { width: "auto", marginTop: "1.25em" }]}
                 onPress={() => {
                     Clipboard.setString(url);
                 }}
             >
                 <View style={[styles.eventTextAndIcons]}>
-                    <Image 
-                        style={{width: "1.281rem", height: "1.281rem", margin: "auto auto auto auto"}}
+                    <Image
+                        style={{ width: "1.281rem", height: "1.281rem", margin: "auto auto auto auto" }}
                         source={require("../assets/Copy-Icon.svg")}
-                    />  
+                    />
                     <Text style={[GlobalStyles.buttonText2]}>
                         Copy Event Link
                     </Text>
-                    
+
                 </View>
-                
-                
+
+
             </TouchableOpacity>
         )
     }
@@ -255,6 +256,9 @@ export const PublishPost = ({ route, navigation }) => {
             <View style={GlobalStyles.bottomSection}>
             </View>
             <Footer homepage = {false} publish = {true} navigation={navigation}></Footer>
+            <View style={GlobalStyles.bottomSection}>
+            </View>
+            <Footer homepage="False" publish="True"></Footer>
         </View>
     );
 };
@@ -273,9 +277,14 @@ const styles = StyleSheet.create({
 
     },
     eventTextAndIcons: {
-        alignItems: "center", 
-        flexDirection: "row", 
-        justifyContent: 'center', 
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: 'center',
+    },
+    eventDateText: {
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: 'space-between',
     },
     lineStyling: {
         marginVertical: "1.25rem",
